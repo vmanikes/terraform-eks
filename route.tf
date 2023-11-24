@@ -67,5 +67,5 @@ resource "aws_route_table_association" "private_4" {
 resource "aws_route" "private_ipv4" {
   route_table_id         = aws_route_table.private_table.id
   destination_cidr_block = "0.0.0.0/0"
-  gateway_id             = aws_nat_gateway.nat_main.id
+  nat_gateway_id         = aws_nat_gateway.nat_main.id
 }

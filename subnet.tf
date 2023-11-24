@@ -5,7 +5,8 @@ resource "aws_subnet" "public_1" {
   enable_resource_name_dns_a_record_on_launch = true
 
   tags = {
-    Name = "Public-1"
+    Name                     = "Public-1"
+    "kubernetes.io/role/elb" = 1
   }
 }
 
@@ -16,7 +17,8 @@ resource "aws_subnet" "public_2" {
   enable_resource_name_dns_a_record_on_launch = true
 
   tags = {
-    Name = "Public-2"
+    Name                     = "Public-2"
+    "kubernetes.io/role/elb" = 1
   }
 }
 
@@ -27,7 +29,8 @@ resource "aws_subnet" "public_3" {
   enable_resource_name_dns_a_record_on_launch = true
 
   tags = {
-    Name = "Public-3"
+    Name                     = "Public-3"
+    "kubernetes.io/role/elb" = 1
   }
 }
 
@@ -38,7 +41,8 @@ resource "aws_subnet" "public_4" {
   enable_resource_name_dns_a_record_on_launch = true
 
   tags = {
-    Name = "Public-4"
+    Name                     = "Public-4"
+    "kubernetes.io/role/elb" = 1
   }
 }
 
@@ -49,7 +53,8 @@ resource "aws_subnet" "private_1" {
   enable_resource_name_dns_a_record_on_launch = true
 
   tags = {
-    Name = "Private-1"
+    Name                              = "Private-1"
+    "kubernetes.io/role/internal-elb" = "1" # Needed for load balancers
   }
 }
 
@@ -60,7 +65,8 @@ resource "aws_subnet" "private_2" {
   enable_resource_name_dns_a_record_on_launch = true
 
   tags = {
-    Name = "Private-2"
+    Name                              = "Private-2"
+    "kubernetes.io/role/internal-elb" = "1" # Needed for load balancers
   }
 }
 
@@ -71,7 +77,8 @@ resource "aws_subnet" "private_3" {
   enable_resource_name_dns_a_record_on_launch = true
 
   tags = {
-    Name = "Private-3"
+    Name                              = "Private-3"
+    "kubernetes.io/role/internal-elb" = "1" # Needed for load balancers
   }
 }
 
@@ -82,6 +89,7 @@ resource "aws_subnet" "private_4" {
   enable_resource_name_dns_a_record_on_launch = true
 
   tags = {
-    Name = "Private-4"
+    Name                              = "Private-4"
+    "kubernetes.io/role/internal-elb" = "1" # Needed for load balancers
   }
 }
